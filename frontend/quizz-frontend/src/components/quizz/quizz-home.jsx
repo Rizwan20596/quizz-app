@@ -9,7 +9,7 @@ const QuizzComponent = () => {
     const [score, setScore] = useState(0);
     const [finished, setFinished] = useState(false);
     const startTest = (num) => {
-        let url = `http://localhost:8000/api/questions/${num}`;
+        let url = `https://quizz-app-53m6.onrender.com/api/questions/${num}`;
         fetch(url, {
             method: "GET",
             headers: { "Content-Type": "application/json" }
