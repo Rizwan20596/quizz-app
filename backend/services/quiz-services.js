@@ -266,7 +266,7 @@ const getRandomObjects = (questArr, noOfRecs) => {
   const taken = new Set();
 
   if (noOfRecs > len) {
-    throw new RangeError("getRandomObjects: more elements requested than available");
+    throw new RangeError(`Failed: The records requested is out of bounds. you can request max ${len} records.`);
   }
 
   while (result.length < noOfRecs) {
