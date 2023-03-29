@@ -3,8 +3,8 @@ import React from "react";
 
 const Header = () => {
     return (
-        <header className="App-header">
-            Welcome Header
+        <header className="header">
+            Sample Quizz
         </header>
     )
 }

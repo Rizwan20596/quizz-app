@@ -1,8 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import QNAComponent from "./qna-comp";
+import PreStartComponent from "./quizz-pre-start";
+import ResultsScreen from './resultsScreen'
 
 const QuizzComponent = () => {
+    const [questions, setQuestions] = useState([]);
+    const [questIndex, setQuestIndex] = useState(0);
+    const [score, setScore] = useState(0);
+    const [finished, setFinished]= useState(false);
+    const startTest = (num) => {
+        let url = `http://localhost:8000/api/questions/${num}`;
+            fetch(url, {
+                method: "GET",
+                headers: { "Content-Type": "application/json" }
+            }).then((res) => res.json()).then(json => { setQuestions(json.data); });
+    }
+
+    const nextQuestion = () => {
+        if(questIndex+1 < questions.length){
+            setQuestIndex(questIndex+1);
+        } else {
+            setFinished(true);
+            setQuestIndex(0);
+        }
+    }
+
+    const increaseScore = () => {
+        setScore(score+1);
+    }
+
     return(
-        <div>Welcome dsbajd sad asd asdnb </div>
+        <div className="quizz-body">
+            {questions.length ?
+                (finished ?
+                    <ResultsScreen score={score} />
+                    : <QNAComponent question={questions[questIndex]} nextQuestion={nextQuestion} increaseScore={increaseScore} lastQuestion={questIndex + 1 === questions.length} />)
+                :
+                <PreStartComponent startTest={startTest} />
+            }
+        </div>
     )
 }
 

@@ -79,7 +79,7 @@ const questions = [
   },
   {
     "question_id": 7,
-    "question": "What was the name of the famous Roman physician who wrote a famous medical text known as the &#39;Canon&#39;?",
+    "question": "What was the name of the famous Roman physician who wrote a famous medical text known as the 'Canon'?",
 
     "answer_index": 3,
     "choices": [
@@ -93,7 +93,7 @@ const questions = [
   },
   {
     "question_id": 8,
-    "question": "What was the name of the famous Roman philosopher who wrote &#39;Meditations&#39;?",
+    "question": "What was the name of the famous Roman philosopher who wrote 'Meditations'?",
     "answer_index": 0,
     "choices": [
       "Marcus Aurelius",
@@ -119,7 +119,7 @@ const questions = [
   },
   {
     "question_id": 10,
-    "question": "What was the name of the famous Roman poet who wrote the epic poem &#39;The Aeneid&#39;?",
+    "question": "What was the name of the famous Roman poet who wrote the epic poem 'The Aeneid'?",
     "answer_index": 1,
     "choices": [
       "Horace",
@@ -140,7 +140,7 @@ const questions = [
       "Cicero",
       "Lucius Cornelius Sulla"
     ],
-    "hint": "He was one of Rome&#39;s greatest orators.",
+    "hint": "He was one of Rome's greatest orators.",
 
   },
   {
@@ -172,7 +172,7 @@ const questions = [
   {
     "question_id": 14,
 
-    "question": "What was the name of the famous Roman historian who wrote &#39;The Histories&#39;?",
+    "question": "What was the name of the famous Roman historian who wrote 'The Histories'?",
     "answer_index": 0,
     "choices": [
       "Tacitus",
@@ -185,7 +185,7 @@ const questions = [
   },
   {
     "question_id": 15,
-    "question": "What was the name of the famous Roman emperor who famously said &#39;I found Rome a city of bricks and left it a city of marble&#39;?",
+    "question": "What was the name of the famous Roman emperor who famously said 'I found Rome a city of bricks and left it a city of marble'?",
     "answer_index": 2,
     "choices": [
       "Augustus",
@@ -235,7 +235,7 @@ const questions = [
   },
   {
     "question_id": 19,
-    "question": "What was the name of the famous Roman poet who wrote the &#39;Metamorphoses&#39;?",
+    "question": "What was the name of the famous Roman poet who wrote the 'Metamorphoses'?",
     "answer_index": 2,
     "choices": [
       "Lucretius",
