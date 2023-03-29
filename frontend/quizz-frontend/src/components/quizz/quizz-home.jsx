@@ -29,11 +29,19 @@ const QuizzComponent = () => {
         setScore(score+1);
     }
 
+    const resetQuiz = () => {
+        setQuestions([]);
+        setQuestIndex(0);
+        setScore(0);
+        setFinished(false);
+        window.sessionStorage.clear();
+    }
+
     return(
         <div className="quizz-body">
             {questions.length ?
                 (finished ?
-                    <ResultsScreen score={score} />
+                    <ResultsScreen score={score} resetQuiz={resetQuiz}/>
                     : <QNAComponent question={questions[questIndex]} nextQuestion={nextQuestion} increaseScore={increaseScore} lastQuestion={questIndex + 1 === questions.length} />)
                 :
                 <PreStartComponent startTest={startTest} />
