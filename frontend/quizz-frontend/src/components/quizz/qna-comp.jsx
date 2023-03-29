@@ -4,6 +4,7 @@ import Timer from './timer';
 const QNAComponent = (props) => {
     const [selectedIndex, setSelectedIndex] = useState(100);
     const [enableAlert, setEnableAlert] = useState(false);
+    const [nextClicked,setNextClicked] = useState(false);
     const verifyAnswer = () => {
         if (selectedIndex === props.question.answer_index) {
             setEnableAlert(true);
@@ -13,12 +14,16 @@ const QNAComponent = (props) => {
             props.increaseScore();
         }
         setSelectedIndex(100);
+        setNextClicked(true);
         props.nextQuestion();
+        setTimeout(() => {
+            setNextClicked(false);
+        }, 50);
     }
 
     return (
         <>
-            <Timer hint={props.question.hint} nextQuestion={props.nextQuestion} answer={props.question.choices[props.question.answer_index]} />
+            {!nextClicked && <Timer hint={!nextClicked && props.question.hint} nextQuestion={props.nextQuestion} answer={props.question.choices[props.question.answer_index]} />}
             {enableAlert &&
                 <Snackbar open={enableAlert} autoHideDuration={6000} anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
                     <Alert severity="success">Hurray! it was the right answer.</Alert>
