@@ -18,6 +18,11 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .MuiPaper-root{
+    width: 90% !important;
+  }
+}
 .header {
   background-color: #4ac8d0;
   height: 8vh;
