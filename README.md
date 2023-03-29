@@ -8,7 +8,7 @@ Services are deployed to: https://quizz-app-53m6.onrender.com
 
 
 
-UI is deployed to: https://quiz-app-2mmr.onrender.com
+UI is deployed to: https://sample-quiz-app.onrender.com
 
 
 
