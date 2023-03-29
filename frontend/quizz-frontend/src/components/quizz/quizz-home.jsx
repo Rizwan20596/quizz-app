@@ -8,12 +8,14 @@ const QuizzComponent = () => {
     const [questIndex, setQuestIndex] = useState(0);
     const [score, setScore] = useState(0);
     const [finished, setFinished] = useState(false);
+    const [loader,setLoader] = useState(false);
     const startTest = (num) => {
+        setLoader(true);
         let url = `https://quizz-app-53m6.onrender.com/api/questions/${num}`;
         fetch(url, {
             method: "GET",
             headers: { "Content-Type": "application/json" }
-        }).then((res) => res.json()).then(json => { setQuestions(json.data); });
+        }).then((res) => res.json()).then(json => { setQuestions(json.data); setLoader(false) });
     }
 
     const nextQuestion = () => {
@@ -44,7 +46,7 @@ const QuizzComponent = () => {
                     <ResultsScreen score={score} resetQuiz={resetQuiz} />
                     : <QNAComponent question={questions[questIndex]} nextQuestion={nextQuestion} increaseScore={increaseScore} lastQuestion={questIndex + 1 === questions.length} />)
                 :
-                <PreStartComponent startTest={startTest} />
+                <PreStartComponent startTest={startTest} loader={loader}/>
             }
         </div>
     )

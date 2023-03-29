@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, CardContent, CardHeader, Divider, Select, MenuItem, InputLabel, FormControl, TextField, Button } from '@mui/material';
+import { Card, CardContent, CardHeader, Divider, Select, MenuItem, InputLabel, FormControl, TextField, Button, CircularProgress } from '@mui/material';
 
 const PreStartComponent = (props) => {
     const dropdownVals = Array(11).fill(1);
@@ -27,7 +27,7 @@ const PreStartComponent = (props) => {
                         ))}
                     </Select>
                     <TextField id="outlined-basic" label='name' variant="outlined" onChange={(e) => { storeVal('name', e.target.value) }} style={{ margin: '10px' }} />
-                    <Button variant="outlined" onClick={(e) => { props.startTest(selectedRange) }} disabled={!selectedRange} style={{ margin: '10px' }}>Start Test</Button>
+                    <Button variant="outlined" onClick={(e) => { props.startTest(selectedRange) }} disabled={!selectedRange} style={{ margin: '10px' }}>{props.loader && <CircularProgress color="inherit" size={20} sx={{marginLeft:'5px', marginRight:'5px'}}/>} Start Test</Button>
                 </FormControl>
             </CardContent>
         </Card>
