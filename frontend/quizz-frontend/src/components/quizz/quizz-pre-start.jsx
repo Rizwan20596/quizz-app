@@ -7,6 +7,8 @@ const PreStartComponent = (props) => {
     const storeVal = (name, val) => {
         sessionStorage.setItem(name, val);
     }
+
+    sessionStorage.setItem('range', 5);
     return (
         <Card variant="outlined" style={{ width: '50%' }}>
             <CardHeader
