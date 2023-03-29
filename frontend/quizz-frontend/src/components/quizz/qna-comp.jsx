@@ -30,7 +30,7 @@ const QNAComponent = (props) => {
                 <CardContent>
                     <FormControl fullWidth style={{ marginLeft: '20px' }}>
                         {props.question.choices.map((v, ind) => (
-                            <FormControlLabel control={<Checkbox checked={selectedIndex === ind ? true : false} onChange={() => { setSelectedIndex(ind) }} />} label={v} />
+                            <FormControlLabel key={ind} control={<Checkbox checked={selectedIndex === ind ? true : false} onChange={() => { setSelectedIndex(ind) }} />} label={v} />
                         ))}
                         <Button variant="contained" onClick={() => { verifyAnswer() }} style={{width:'90%'}}>{props.lastQuestion ? 'Finish' : 'Next'}</Button>
                     </FormControl>

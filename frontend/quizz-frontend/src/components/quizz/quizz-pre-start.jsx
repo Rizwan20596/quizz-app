@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, Divider, Select, MenuItem, InputLabel, F
 
 const PreStartComponent = (props) => {
     const dropdownVals = Array(10).fill(1);
-    const [selectedRange, setSelectedRange] = useState(false);
+    const [selectedRange, setSelectedRange] = useState(0);
     const storeVal = (name,val) => {
         sessionStorage.setItem(name, val);
     }
@@ -23,7 +23,7 @@ const PreStartComponent = (props) => {
                         style={{margin:'10px'}}
                     >
                         {dropdownVals.map((v, ind) => (
-                            <MenuItem value={ind}>{ind}</MenuItem>
+                            <MenuItem key={ind} value={ind}>{ind}</MenuItem>
                         ))}
                     </Select>
                     <TextField id="outlined-basic" label='name' variant="outlined" onChange={(e) => { storeVal('name',e.target.value) }}  style={{margin:'10px'}}/>
