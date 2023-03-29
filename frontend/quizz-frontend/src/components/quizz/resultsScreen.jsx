@@ -5,7 +5,7 @@ const ResultsScreen = (props) => {
     return (
         <>
             <Card variant="outlined" style={{ width: '90%', height: '50vh' }}>
-                <CardHeader subheader='Thank you for taking the quiz @Sample Quizz' title='Hurray!! You have completed the quiz successfully!' />
+                <CardHeader subheader={`Thank you ${window.sessionStorage.getItem('name')} for taking the quiz @Sample Quizz`} title='Hurray!! You have completed the quiz successfully!' />
                 <Divider />
                 <CardContent>
                     <Typography variant="h4">
