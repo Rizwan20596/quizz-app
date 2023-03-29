@@ -7,7 +7,7 @@ import './App.css';
 const App = () => {
   return (
     <div className="App">
-      <Header/>
+      <Header />
       <Router>
         <Routes>
           <Route

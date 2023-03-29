@@ -15,10 +15,10 @@ const QNAComponent = (props) => {
         setSelectedIndex(100);
         props.nextQuestion();
     }
-   
+
     return (
         <>
-            <Timer hint={props.question.hint} nextQuestion={props.nextQuestion} answer={props.question.choices[props.question.answer_index]}/>
+            <Timer hint={props.question.hint} nextQuestion={props.nextQuestion} answer={props.question.choices[props.question.answer_index]} />
             {enableAlert &&
                 <Snackbar open={enableAlert} autoHideDuration={6000} anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
                     <Alert severity="success">Hurray! it was the right answer.</Alert>
@@ -32,7 +32,7 @@ const QNAComponent = (props) => {
                         {props.question.choices.map((v, ind) => (
                             <FormControlLabel key={ind} control={<Checkbox checked={selectedIndex === ind ? true : false} onChange={() => { setSelectedIndex(ind) }} />} label={v} />
                         ))}
-                        <Button variant="contained" onClick={() => { verifyAnswer() }} style={{width:'90%'}}>{props.lastQuestion ? 'Finish' : 'Next'}</Button>
+                        <Button variant="contained" onClick={() => { verifyAnswer() }} style={{ width: '90%' }}>{props.lastQuestion ? 'Finish' : 'Next'}</Button>
                     </FormControl>
                 </CardContent>
             </Card>

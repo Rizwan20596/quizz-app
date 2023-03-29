@@ -7,18 +7,18 @@ const QuizzComponent = () => {
     const [questions, setQuestions] = useState([]);
     const [questIndex, setQuestIndex] = useState(0);
     const [score, setScore] = useState(0);
-    const [finished, setFinished]= useState(false);
+    const [finished, setFinished] = useState(false);
     const startTest = (num) => {
         let url = `http://localhost:8000/api/questions/${num}`;
-            fetch(url, {
-                method: "GET",
-                headers: { "Content-Type": "application/json" }
-            }).then((res) => res.json()).then(json => { setQuestions(json.data); });
+        fetch(url, {
+            method: "GET",
+            headers: { "Content-Type": "application/json" }
+        }).then((res) => res.json()).then(json => { setQuestions(json.data); });
     }
 
     const nextQuestion = () => {
-        if(questIndex+1 < questions.length){
-            setQuestIndex(questIndex+1);
+        if (questIndex + 1 < questions.length) {
+            setQuestIndex(questIndex + 1);
         } else {
             setFinished(true);
             setQuestIndex(0);
@@ -26,7 +26,7 @@ const QuizzComponent = () => {
     }
 
     const increaseScore = () => {
-        setScore(score+1);
+        setScore(score + 1);
     }
 
     const resetQuiz = () => {
@@ -37,11 +37,11 @@ const QuizzComponent = () => {
         window.sessionStorage.clear();
     }
 
-    return(
+    return (
         <div className="quizz-body">
             {questions.length ?
                 (finished ?
-                    <ResultsScreen score={score} resetQuiz={resetQuiz}/>
+                    <ResultsScreen score={score} resetQuiz={resetQuiz} />
                     : <QNAComponent question={questions[questIndex]} nextQuestion={nextQuestion} increaseScore={increaseScore} lastQuestion={questIndex + 1 === questions.length} />)
                 :
                 <PreStartComponent startTest={startTest} />
