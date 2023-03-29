@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Card, CardContent, CardHeader, Divider, Select, MenuItem, InputLabel, FormControl, TextField, Button } from '@mui/material';
 
 const PreStartComponent = (props) => {
-    const dropdownVals = Array(10).fill(1);
-    const [selectedRange, setSelectedRange] = useState(0);
+    const dropdownVals = Array(11).fill(1);
+    const [selectedRange, setSelectedRange] = useState(5);
     const storeVal = (name, val) => {
         sessionStorage.setItem(name, val);
     }
@@ -23,7 +23,7 @@ const PreStartComponent = (props) => {
                         style={{ margin: '10px' }}
                     >
                         {dropdownVals.map((v, ind) => (
-                            <MenuItem key={ind} value={ind}>{ind}</MenuItem>
+                            <MenuItem key={ind} value={ind+5}>{ind+5}</MenuItem>
                         ))}
                     </Select>
                     <TextField id="outlined-basic" label='name' variant="outlined" onChange={(e) => { storeVal('name', e.target.value) }} style={{ margin: '10px' }} />
