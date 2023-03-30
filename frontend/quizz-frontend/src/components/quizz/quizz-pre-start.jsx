@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, Divider, Select, MenuItem, InputLabel, FormControl, TextField, Button, CircularProgress } from '@mui/material';
 
 const PreStartComponent = (props) => {
     const dropdownVals = Array(11).fill(1);
     const [selectedRange, setSelectedRange] = useState(5);
+    useEffect(()=>{
+        sessionStorage.setItem('range', 5);
+    },[])
     const storeVal = (name, val) => {
         sessionStorage.setItem(name, val);
     }
-
-    sessionStorage.setItem('range', 5);
     return (
         <Card variant="outlined" style={{ width: '50%' }}>
             <CardHeader
