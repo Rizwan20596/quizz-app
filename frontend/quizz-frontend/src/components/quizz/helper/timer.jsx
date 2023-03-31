@@ -18,6 +18,7 @@ const Timer = (props) => {
             setTime(30);
             setSkippedFlag(props.answer);
             props.nextQuestion();
+            props.setSelectedIndex(100);
             setTimeout(() => {
                 setSkippedFlag(false);
             }, 3000);
