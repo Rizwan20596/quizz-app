@@ -14,19 +14,18 @@ const Timer = (props) => {
 
     useEffect(() => {
         if (time === 0) {
-            props.nextQuestion();
             setHint(false);
             setTime(30);
             setSkippedFlag(props.answer);
-            props.setSelectedIndex(100);
+            props.nextQuestion();
             setTimeout(() => {
                 setSkippedFlag(false);
-            }, 3000)
+            }, 3000);
         }
         if (time === 10) {
             setHint(props.hint);
         }
-    }, [time, props]);
+    }, [time]);
 
     //For every 10 secs set the time to take desired action
     setTimeout(() => {
@@ -45,7 +44,7 @@ const Timer = (props) => {
             </Snackbar>
             }
             {<Snackbar open={skippedFlag} autoHideDuration={3000} anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }} sx={{ marginTop: '20px', maxWidth: '50%' }}>
-                <Alert severity="error">Oops!! your question timed out! The correct answer was {props.answer}</Alert>
+                <Alert severity="error">Oops!! your question timed out! The correct answer was {skippedFlag}</Alert>
             </Snackbar>
             }
         </>
