@@ -2,11 +2,18 @@ import React, { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, Divider, Select, MenuItem, InputLabel, FormControl, TextField, Button, CircularProgress } from '@mui/material';
 
 const PreStartComponent = (props) => {
+    //Random 11 values of array to show in number of questions dropdown
     const dropdownVals = Array(11).fill(1);
+
+    //Active dropdown value
     const [selectedRange, setSelectedRange] = useState(5);
+
+    //If there is no value selected/changed in dropdown set the default value(5) to session to show in results page
     useEffect(()=>{
         sessionStorage.setItem('range', 5);
     },[])
+
+    //If there is a value selected/changed in dropdown set the default value to session to show in results page
     const storeVal = (name, val) => {
         sessionStorage.setItem(name, val);
     }

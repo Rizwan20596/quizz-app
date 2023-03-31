@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import { Card, CardContent, CardHeader, Divider, FormControl, Button, FormControlLabel, Checkbox, Alert, Snackbar } from '@mui/material';
 import Timer from '../helper/timer';
+
 const QNAComponent = (props) => {
+    //Stores the selected answer index to compare it with the actual answer index to show a message and set score to +1
     const [selectedIndex, setSelectedIndex] = useState(100);
+
+    //To show the alert that it was a right answer
     const [enableAlert, setEnableAlert] = useState(false);
+
+    //When clicked on next need to reset the timer
     const [nextClicked,setNextClicked] = useState(false);
+
+    //Gets called on click of next and checks if answer is right or not
     const verifyAnswer = () => {
         if (selectedIndex === props.question.answer_index) {
             setEnableAlert(true);

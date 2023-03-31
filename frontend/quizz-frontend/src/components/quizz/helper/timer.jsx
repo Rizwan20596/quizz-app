@@ -1,9 +1,17 @@
 import { Alert, Snackbar } from "@mui/material";
 import React, { useEffect, useState } from "react";
+
 const Timer = (props) => {
+    //Stores the time inorder to show it to user when running out/hints/skip question after 30 secs
     const [time, setTime] = useState(30);
+
+    //Stores the hint for active question to show when only 10 secs left
     const [hint, setHint] = useState(false);
+
+    //Skips the question when time is up and show the prev question's answer
     const [skippedFlag, setSkippedFlag] = useState(false);
+
+
     useEffect(() => {
         if (time === 0) {
             props.nextQuestion();
@@ -19,6 +27,7 @@ const Timer = (props) => {
         }
     }, [time, props]);
 
+    //For every 10 secs set the time to take desired action
     setTimeout(() => {
         if (time > 0) {
             setTime(time - 10);
