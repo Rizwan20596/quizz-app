@@ -1,4 +1,6 @@
 const QuizServices = require('../services/quiz-services');
+
+//Define controllers here to fetch/update data to service layer
 exports.getQuestions = async (req,res) => {
     try{
         const questions = await QuizServices.getQuestions(req.params.numberOfQuestions);

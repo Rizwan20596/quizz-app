@@ -260,6 +260,8 @@ const questions = [
 
   }
 ];
+
+//The below function returns the random set of questions of requested numbers within single loop
 const getRandomObjects = (questArr, noOfRecs) => {
   const result = [];
   const len = questArr.length;
