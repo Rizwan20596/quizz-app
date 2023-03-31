@@ -31,7 +31,7 @@ const QNAComponent = (props) => {
 
     return (
         <>
-            {!nextClicked && <Timer hint={!nextClicked && props.question.hint} nextQuestion={props.nextQuestion} answer={props.question.choices[props.question.answer_index]} />}
+            {!nextClicked && <Timer hint={!nextClicked && props.question.hint} nextQuestion={props.nextQuestion} answer={props.question.choices[props.question.answer_index]} setSelectedIndex={setSelectedIndex}/>}
             {enableAlert &&
                 <Snackbar open={enableAlert} autoHideDuration={6000} anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
                     <Alert severity="success">Hurray! it was the right answer.</Alert>
