@@ -1,5 +1,5 @@
 import React from "react";
-import QuizzComponent from './components/quizz/quizz-home'
+import QuizzComponent from './components/quizz/home/quizz-home'
 import Header from './components/Header/header'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';

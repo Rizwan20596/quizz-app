@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { Card, CardContent, CardHeader, Typography, Divider, FormControl, Button, FormControlLabel, Checkbox, Alert, Snackbar } from '@mui/material';
-import Timer from './timer';
+import React, { useState } from "react";
+import { Card, CardContent, CardHeader, Divider, FormControl, Button, FormControlLabel, Checkbox, Alert, Snackbar } from '@mui/material';
+import Timer from '../helper/timer';
 const QNAComponent = (props) => {
     const [selectedIndex, setSelectedIndex] = useState(100);
     const [enableAlert, setEnableAlert] = useState(false);

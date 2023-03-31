@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import QNAComponent from "./qna-comp";
-import PreStartComponent from "./quizz-pre-start";
-import ResultsScreen from './resultsScreen'
+import React, { useState } from "react";
+import QNAComponent from "../qna/qna-comp";
+import PreStartComponent from "../landing/quizz-pre-start";
+import ResultsScreen from '../results/resultsScreen'
 
 const QuizzComponent = () => {
     const [questions, setQuestions] = useState([]);

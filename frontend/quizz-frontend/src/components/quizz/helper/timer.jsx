@@ -17,7 +17,7 @@ const Timer = (props) => {
         if (time === 10) {
             setHint(props.hint);
         }
-    }, [time]);
+    }, [time, props]);
 
     setTimeout(() => {
         if (time > 0) {
